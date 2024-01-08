@@ -1,8 +1,8 @@
-# Akka Remote Miner
+# Akka Remote Miner - Hop On Hop Off
 This project contains two F# scripts, AkkaRemoteMiner.fsx and AkkaServerMiner.fsx, which implement a distributed system for finding a SHA256 hash with a specified number of leading zeros. The system uses the Akka.NET actor model framework to distribute the computation across multiple actors.
 
 # How it works
-The system consists of a server and multiple client actors. The server assigns a portion of the computation to each client actor. Each actor then computes SHA256 hashes for its assigned portion and sends any hashes that meet the criteria back to the server.
+The system consists of a server and multiple client actors. The server assigns a portion of the computation to each client actor. Each actor then computes SHA256 hashes for its assigned portion and sends any hashes that meet the criteria back to the server. The clients can dynamically join or leave the network, hence the name hop-on hop off
 
 # Files
 AkkaRemoteMiner.fsx: This script contains the client-side actors. Each actor computes SHA256 hashes for a portion of the possible inputs and sends any hashes that meet the criteria back to the server.
